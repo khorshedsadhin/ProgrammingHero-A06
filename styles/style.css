@@ -3,3 +3,11 @@
 * {
     font-family: "Inter", sans-serif;
 }
+
+.demo-box {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+            color: #1f2937;
+}
