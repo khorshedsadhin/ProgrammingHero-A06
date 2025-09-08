@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 06</title>
+  <link rel="stylesheet" href="./styles/style.css">
+
+  <!-- daisy ui & tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+
+  <header>
+    <!-- navbar section -->
+    <div class="navbar px-5 md:px-[80px] bg-[#15803D] shadow-sm">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost text-white md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+            <li><a>About</a></li>
+            <li><a>Gallery</a></li>
+            <li><a>Plant a Tree</a></li>
+          </ul>
+        </div>
+        <a class="text-xl text-white font-medium">Green Earth</a>
+      </div>
+      <div class="navbar-center hidden md:flex">
+        <ul class="menu menu-horizontal px-1 text-white">
+          <li><a>About</a></li>
+          <li><a>Gallery</a></li>
+          <li><a>Plant a Tree</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <a class="btn rounded-4xl bg-[#FACC15] text-[#15803D] border-none hover:bg-yellow-400">Plant a Tree</a>
+      </div>
+    </div>
+
+    <!-- banner section -->
+    <section class="bg-[#EAF7F0] flex justify-center lg:justify-between items-end">
+      <img class="hidden lg:block h-auto w-1/4" src="./assets/hero-leaf1.png" alt="Decorative palm leaf">
+
+      <div class="text-center space-y-6 px-6 md:px-0 py-16">
+        <h2 class="font-bold text-3xl md:text-5xl">Plant a Tree, Grow a Future</h2>
+        <p class="text-gray-600 text-sm md:text-base">Join our mission to plant 1 million trees and make the Earth
+          greener for future <br class="hidden md:block">generations.</p>
+        <a class="btn rounded-4xl bg-[#FACC15] text-[#15803D] border-none hover:bg-yellow-400">Get Involved</a>
+      </div>
+
+      <img class="hidden lg:block h-auto w-1/4" src="./assets/hero-leaf2.png" alt="Decorative palm leaf">
+    </section>
+  </header>
+
+  <!-- main section -->
+  <main class="bg-[#F0FDF4]">
+    <!-- campaign section -->
+    <section class="md:max-w-[1090px] w-11/12 mx-auto py-8 md:py-[100px]">
+      <h2 class="text-center font-semibold text-2xl md:pb-10 pb-5 md:text-3xl">About the Campaign</h2>
+
+      <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
+        <img class="w-full md:w-1/2" src="./assets/about.png" alt="">
+        <div class="text-gray-500">
+          <p>Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start,
+            we've planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create
+            habitats for wildlife, and combat global warming.</p>
+
+          <ul class="list-disc mt-[20px] ml-5">
+            <li>Restoration of natural habitats</li>
+            <li>Improvement of air quality</li>
+            <li>Support for local communities</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- impact section -->
+     <section class="bg-[#CFF0DC] py-8 md:py-[100px]">
+        <h2 class="text-center font-semibold text-2xl md:pb-10 pb-5 md:text-3xl">Our Impact</h2>
+        
+        <div class="flex flex-wrap justify-center gap-3 md:gap-5">
+          <button class="btn btn-xl pointer-events-none border-none p-8 md:p-12 lg:px-23 lg:py-15 rounded-xl">
+          <div>
+            <h2 class="md:text-3xl text-lg text-[#15803D]">500K+</h2>
+            <p class="text-gray-500 text-sm md:text-base font-[400]">Trees Planted</p>
+          </div>
+        </button>
+
+        <button class="btn btn-xl pointer-events-none border-none p-8 md:p-12 lg:px-23 lg:py-15 rounded-xl">
+          <div>
+            <h2 class="md:text-3xl text-lg text-[#15803D]">120+</h2>
+            <p class="text-gray-500 text-sm md:text-base font-[400]">Communities Involved</p>
+          </div>
+        </button>
+
+        <button class="btn btn-xl pointer-events-none border-none p-8 md:p-12 lg:px-23 lg:py-15 rounded-xl">
+          <div>
+            <h2 class="md:text-3xl text-lg text-[#15803D]">30+</h2>
+            <p class="text-gray-500 text-sm md:text-base font-[400]">Countries Reached</p>
+          </div>
+        </button>
+        </div>
+     </section>
+
+     <!-- form-section -->
+      <section class="bg-[#166534] py-8 md:py-[100px]">
+        <h2 class="text-center font-semibold text-2xl text-white md:pb-10 pb-5 md:text-3xl">Plant a Tree Today</h2>
+
+        <div class="w-full flex justify-center">
+          <fieldset class="fieldset bg-[#15803D] border-none rounded-box w-[80%] md:w-[50%] lg:w-[33%] border p-4">
+
+          <input type="text" class="input w-full" placeholder="Your Name" />
+          <input type="email" class="input w-full" placeholder="Your Email Address" />
+          <select class="select w-full">
+            <option disabled selected>Number of Trees</option>
+            <option>Crimson</option>
+            <option>Amber</option>
+            <option>Velvet</option>
+          </select>
+          <button class="btn rounded-4xl bg-[#FACC15] mt-4 text-[#15803D] border-none hover:bg-yellow-400">Plant a Tree</button>
+
+        </fieldset>
+        </div>
+      </section>
+  </main>
+
+  <footer class="bg-[#14532D] flex justify-center">
+    <p class="text-white text-[10px] flex items-center h-10 md:h-[70px] md:text-sm lg:text-base font-[400]">© 2025 Green Earth. All Rights Reserved.</p>
+  </footer>
+
+  <script src="./scripts/script.js"></script>
+</body>
+
+</html>
