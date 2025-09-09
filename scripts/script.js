@@ -85,8 +85,8 @@ const displayCategories = (categories) => {
     const buttonContainer = document.getElementById("button-container");
     buttonContainer.innerHTML = `
         <div>
-              <a href="/" class="category-btn font-[400] block text-black hover:bg-green-600 active:bg-[#15803D] hover:text-white active:text-white pl-3 py-2 rounded-xl">
-              <button class="">All Trees</button>
+              <a href="#" onclick="location.reload()" class="category-btn font-[400] block text-black hover:bg-green-600 active:bg-[#15803D] hover:text-white active:text-white pl-3 py-2 rounded-xl">
+              All Trees
             </a>
         </div>
     `;
