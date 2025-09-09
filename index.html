@@ -62,8 +62,13 @@
 
   <!-- main section -->
   <main class="bg-[#F0FDF4]">
+    <!-- spinner section -->
+    <section id="spinner" class="flex justify-center items-center py-10 hidden">
+      <span class="loading loading-spinner text-success"></span>
+    </section>
+
     <!-- card section -->
-    <section class="w-11/12 mx-auto md:pt-[100px] pt-8">
+    <section id="card-section" class="w-11/12 mx-auto md:pt-[100px] pt-8">
       <h2 class="text-center font-semibold text-2xl md:pb-10 pb-5 md:text-3xl">Choose Your Trees</h2>
 
       <!-- cards maintainer -->
@@ -82,8 +87,24 @@
           </div>
         </div>
 
-        <div id="cart" class="bg-slate-300 demo-box lg:col-span-3">
-          Your cart
+        <div id="cart" class="bg-white p-5 rounded-xl lg:col-span-3">
+          <h2 class="text-[20px] font-semibold">Your Cart</h2>
+
+          <div id="cart-container">
+              
+            <!-- add carts -->
+             <div id="add-to-cart">
+
+             </div>
+
+            <hr class="text-gray-200">
+            <!-- Total Counter -->
+            <div class="flex justify-between">
+              <h2 class="font-semibold mt-2">Total:</h2>
+              <h2 class="mt-2">৳<span id="total-price"></span></span></h2>
+            </div>
+              
+          </div>
         </div>
       </div>
     </section>
@@ -147,9 +168,9 @@
           <input type="email" class="input w-full" placeholder="Your Email Address" />
           <select class="select w-full">
             <option disabled selected>Number of Trees</option>
-            <option>Crimson</option>
-            <option>Amber</option>
-            <option>Velvet</option>
+            <option>1 tree - $5</option>
+            <option>5 tree - $25</option>
+            <option>10 tree - $90</option>
           </select>
           <button class="btn rounded-4xl bg-[#FACC15] mt-4 text-[#15803D] border-none hover:bg-yellow-400">Plant a Tree</button>
 
