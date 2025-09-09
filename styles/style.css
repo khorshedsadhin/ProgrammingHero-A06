@@ -11,3 +11,8 @@
             font-weight: bold;
             color: #1f2937;
 }
+
+.btn-active {
+    background-color: #15803D;
+    color: white;
+}
