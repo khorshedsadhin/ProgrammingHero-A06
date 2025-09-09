@@ -101,7 +101,7 @@
             <!-- Total Counter -->
             <div class="flex justify-between">
               <h2 class="font-semibold mt-2">Total:</h2>
-              <h2 class="mt-2">৳<span id="total-price"></span></span></h2>
+              <h2 class="mt-2">৳<span id="total-price">0</span></h2>
             </div>
               
           </div>
@@ -177,6 +177,21 @@
         </fieldset>
         </div>
       </section>
+
+      <!-- modal section -->
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="details-container" class="space-y-5">
+            
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
   </main>
 
   <footer class="bg-[#14532D] flex justify-center">

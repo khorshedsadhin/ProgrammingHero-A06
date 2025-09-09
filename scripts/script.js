@@ -29,6 +29,15 @@ const loadAllTrees = async() => {
     displayTrees(data.plants);
 }
 
+const loadTreeDetails = async(id) => {
+    const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+
+    const res = await fetch(url);
+    const data = await res.json();
+
+    displayTreeDetails(data.plants);
+}
+
 const showActive = async(id) => {
     manageSpinner(true);
     const url = `https://openapi.programming-hero.com/api/category/${id}`;
@@ -48,6 +57,25 @@ const removeActive = () => {
 
 
 // -----------------------------------------------------------------------------------
+const displayTreeDetails = (plant) => {
+    const detailsBox = document.getElementById("details-container");
+    detailsBox.innerHTML = `
+        <div class="bg-base-100 w-full h-full flex flex-col">
+            <h2 onclick="loadTreeDetails(${plant.id})" class="ml-3 cursor-pointer font-bold card-title">${plant.name}</h2>
+            <figure class="px-3 pt-3 h-64">
+                <img src="${plant.image}" class="rounded-xl w-full h-full object-cover" alt="" class="rounded-xl" />
+            </figure>
+            <div class="text-left flex-grow ml-3 mt-3 space-y-2">
+                <p><span class="font-bold">Category: </span>${plant.category}</p>
+                <p><span class="font-bold">Price: </span>৳${plant.price}</p>
+                <p><span class="font-bold">Description: </span>${plant.description}</p>
+            </div>
+            </div>
+    `;
+
+    document.getElementById("my_modal_5").showModal();
+}
+
 const displayTrees = (plants) => {
     const cardsContainer = document.getElementById("cards-container");
     cardsContainer.innerHTML = "";
@@ -57,10 +85,10 @@ const displayTrees = (plants) => {
         cardDiv.innerHTML = `
             <div class="card bg-base-100 w-full shadow-xl h-full flex flex-col">
             <figure class="px-3 pt-3 h-48">
-                <img src="${plant.image}" class="rounded-xl w-full h-full object-cover" alt="Shoes" class="rounded-xl" />
+                <img src="${plant.image}" class="rounded-xl w-full h-full object-cover" alt="" class="rounded-xl" />
             </figure>
             <div class="card-body text-left flex-grow">
-                <h2 class="card-title">${plant.name}</h2>
+                <h2 onclick="loadTreeDetails(${plant.id})" class="cursor-pointer card-title">${plant.name}</h2>
                 <p>${plant.description}</p>
 
                 <div class="flex justify-between items-center">
@@ -142,7 +170,7 @@ const showCart = () => {
                 <h2 class="font-semibold">${item.name}</h2>
                 <h2 class="text-gray-500">৳<span>${item.price}</span> x <span>${item.quantity}</span></h2>
               </div>
-              <h2 onclick="removeFromCart('${item.name}')" class="text-gray-500 font-medium hover:text-black cursor-pointer">x</h2>
+              <h2 onclick="removeFromCart('${item.name}')" class="text-gray-500 font-medium hover:text-black cursor-pointer">❌</h2>
             </div>
         `;
         cartContainer.appendChild(cartDiv);
@@ -151,6 +179,9 @@ const showCart = () => {
 
 const updateTotal = () => {
     const totalPrice = document.getElementById("total-price");
+    
+    if(totalPrice == 0)
+        totalPrice.innerHTML = "";
     
     const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     totalPrice.innerText = parseInt(total);
